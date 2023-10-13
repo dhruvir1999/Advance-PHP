@@ -1,0 +1,204 @@
+ What Is Object Oriented Programming?
+ -> Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
+ What Are Properties Of Object Oriented Systems?
+ -> The characteristics of object oriented programming are classes, objects, encapsulation, inheritance, abstraction, and polymorphism.
+ What Is Difference Between Class And Interface?
+ -> A class can have any type of members like private, public. Interface can only have public members. A class can have constructor methods. Interface can not have a constructor.
+ What Is Overloading?
+ -> Function overloading in PHP is used to dynamically create properties and methods. These dynamic entities are processed by magic methods which can be used in a class for various action types. 
+ What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example
+ -> The scope resolution operator also known as Paamayim Nekudotayim or more commonly known as the double colon is a token that allows access to static, constant, and overridden properties or methods of a class.
+    # It is used to refer to blocks or codes in context to classes, objects, etc.
+    # An identifier is used with the scope resolution operator.
+    Example:
+    <?php 
+    class democlass {
+            const PI = 3.14;
+    }
+    echo democlass::PI;
+    ?>
+
+• What are the differences between abstract classes and interfaces?
+-> An abstract class contains an abstract keyword on the declaration whereas an Interface is a sketch that is used to implement a class.
+• Define Constructor and Destructor?
+-> constructor:
+    A constructor allows you to initialize an object's properties upon creation of the object.
+   Destructor :
+    A destructor is called when the object is destructed or the script is stopped or exited. 
+• How to Load Classes in PHP?
+-> The spl_autoload_register() function registers any number of autoloaders, enabling for classes and interfaces to be automatically loaded if they are currently not defined. 
+    Example:
+        <?php
+        spl_autoload_register(function ($class_name) {
+            include $class_name . '.php';
+        });
+        $obj  = new MyClass1();
+        $obj2 = new MyClass2(); 
+        ?>
+
+• How to Call Parent Constructor?
+-> In order to run a parent constructor, a call to parent::__construct() within the child constructor is required.
+• Are Parent Constructor Called Implicitly When Create An ObjectOf Class?
+-> Parent constructors are not called implicitly if the child class defines a constructor.
+• What Happen, If Constructor Is Defined As Private Or Protected?
+-> The constructor may be made private or protected to prevent it from being called externally. 
+    If so, only a static method will be able to instantiate the class. 
+    Because they are in the same class definition they have access to private methods, even if not of the same object instance.
+• What are PHP Magic Methods/Functions? List them Write program for Static Keyword in PHP?
+-> Methods that begin with 2 underscores(__) are generally called Magic methods in PHP. 
+    These methods names are limited to some list of PHP supported keywords that are reserved. 
+    So any function should not be defined with the name of PHP magic methods.
+#List of Magic Methods in PHP
+__construct()
+__destruct()
+__call($fun, $arg)
+__callStatic($fun, $arg)
+__get($property)
+__set($property, $value)
+__isset($content)
+__unset($content)
+__sleep()
+__wakeup()
+__toString()
+__invoke()
+__set_state($array)
+__clone()
+__debugInfo()
+
+# Example:
+<?php
+class MyClass {
+  public static $str = "Hello World!";
+
+  public static function hello() {
+    echo MyClass::$str;
+  }
+}
+echo MyClass::$str;
+echo "<br>";
+echo MyClass::hello();
+?>
+
+• Create multiple Traits and use it in to a single class?
+-> <?php
+trait hello {
+  public function message1() {
+    echo "Nature is precious,\n";
+  }
+}
+
+trait world{
+  public function message2() {
+    echo "So Let us unite to preserve it";
+  }
+}
+
+class InUnity {
+  use hello;
+}
+
+class WeCan {
+  use hello, world;
+}
+
+$obj = new InUnity();
+$obj->message1();
+echo "****************\n";
+$obj2 = new WeCan();
+$obj2->message1();
+$obj2->message2();
+?>
+
+• Write PHP Script of Object Iteration?
+-> <?php
+class myclass{
+   private $var;
+   protected $var1;
+   public $x, $y, $z;
+   public function __construct(){
+      $this->var="private variable";
+      $this->var1=TRUE;
+      $this->x=100;
+      $this->y=200;
+      $this->z=300;
+   }
+   public function iterate(){
+      foreach ($this as $key => $value) {
+         print "$key => $value
+";
+      }
+   }
+}
+$obj = new myclass();
+foreach($obj as $key => $value) {
+   print "$key => $value
+";
+}
+echo "
+";
+$obj->iterate();
+?>
+
+• Use of The $this keyword
+-> this is a reference to the current object — the object whose method or constructor is being called. 
+
+# Jquery
+
+# What is jQuery?
+->jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is to make it much easier to use JavaScript on your website. jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. 
+# How are JavaScript and jQuery different?
+-> JavaScript is an independent language and can exist on its own. JQuery is a JavaScript library. It would not have been invented had JavaScript was not there. jQuery is still dependent on JavaScript as it has to be converted to JavaScript for the browser in-built JavaScript engine to interpret and run it.
+# Which is the starting point of code execution in jQuery?
+-> The starting point of jQuery code execution is $(document). ready() function which is executed when DOM is loaded.
+# Document Load Vs Window. Load() jQuery
+-> The key difference between $(document). ready() and $(window). load() event is that the code included inside onload function will run once the entire page(images, iframes, stylesheets,etc) are loaded whereas the $(document). ready() event fires before all images,iframes etc.
+# What is the difference between prop and attr?
+-> prop() is used to get or set boolean values, such as a checkbox's checked state or a button's disabled state. On the other hand, . attr() is used to get or set string values, such as the src attribute of an image or the title attribute of a tooltip.
+# Explain Difference Between JQuery And JavaScript?
+-> JavaScript is a programming language while jQuery is a library that consists of JavaScript code. The jQuery code library comes with ready-made JavaScript code implementations, which you can use to build websites more quickly.
+# How We Can Select The Specified <li> Element From The ListOf <li>
+Elements In <ul>?
+-> In JavaScript, you can use the . getElementsByTagName() method to get all the <li> elements in <ul>. In-addition, you can use the . querySelectorAll() method also to get all the <li>.
+# In <table> Design Change The Color Of Even <tr> Elements To
+“green”And Change The Color Of Odd <tr> Elements To “blue” Color? Give
+An Example Code?
+# How We Can Implement Animation Effects In Jquery?
+-> The jQuery animate() method is used to create custom animations. Syntax: $(selector).animate({params},speed,callback); The required params parameter defines the CSS properties to be animated.
+# Apply jQuery validation using library.
+-> Include the JQuery Library and JQuery validation plugin
+To use JQuery validation, we need to refer the script file ‘jquery.validate’ in our page. Along with these script file, include the Scripts and CSS files needed to render our EJ components as shown below.
+# Create custom dynamic function for require field validator.
+-> 
+# Get state data by country selection (Ajax).
+# Image uploading with preview. 
+-> <!DOCTYPE html>
+<html>
+<head>
+   <title>Preview Image Before Upload</title>
+   <script type="text/javascript">
+      function previewImage(event) {
+         var input = event.target;
+         var image = document.getElementById('preview');
+         if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+               image.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+         }
+      }
+   </script>
+   <style>
+      #preview {
+         width: 300px;
+         height: 300px;
+      }
+   </style>
+</head>
+<body>
+   <h2>Preview Image Before Upload</h2>
+   <input type="file" accept="image/*" onchange="previewImage(event)">
+   <br>
+   <img id="preview" alt="Preview Image">
+</body>
+</html>
